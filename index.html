@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vanilla JS Podcast App</title>
-    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
 
 <!--Main Layout: Header, Search Bar and ??-->
 
 <header class="header-div">
-     <img src="./wireframe reference images/assets/podcast-icon-header.png">
+     <img src="./wireframe-reference-images/assets/podcast-icon-header.png" alt="Podcast App Icon">
      <h2> PodcastApp</h2>
-     <input class= "search" type="text" placeholder="search" > <!--name = title-->
+     <input class="search" type="text" placeholder="search" name="title"> <!--name = title-->
 </header>
 
 <main>
@@ -28,8 +28,9 @@
         </div>
     </div>
 </main>
-<scrpt scr="data.js"></scrpt>
-<script src="script.js"></script>
+
+<script type="module" src="data.js"></script>
+<script type="module" src="script.js"></script>
     
 </body>
 </html>
