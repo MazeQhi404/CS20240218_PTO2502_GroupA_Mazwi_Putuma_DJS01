@@ -15,24 +15,68 @@ body {
 
 /* Header */
 header {
-  background-color: #343a40;
-  color: white;
-  text-align: center;
+  background-color: white;
+  color: #343a40;
   padding: 1.5rem;
+  display: flex;
+  justify-content: space-between; /* Pushes left and right items apart */
+  align-items: center; /* Vertically centers all items */
 }
 
-header h1 {
+header h2 {
   font-size: 2rem;
+  margin: 0; /* Remove default margin for consistent spacing */
 }
 
-/* Podcast list grid */
-.podcast-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+.header-left {
+  display: flex;
+  align-items: center; /* Vertically centers logo and title */
+  gap: 10px; /* Space between logo and title */
+}
+
+.podcast-logo {
+  width: 30px;
+  height: 30px;
+}
+
+.search {
+  border-radius: 2%;
+  background-color: antiquewhite;
+  height: 40px;
+  padding: 0 1rem; /* Add padding for better button size */
+  border: 1px solid #343a40; /* Add border for visibility */
+  cursor: pointer; /* Indicate interactivity */
+  display: flex;
+  align-items: center; /* Center icon/text vertically */
+  font-size: 1rem;
+  color: #343a40;
+}
+
+/* Focus state for accessibility */
+.search:focus {
+  outline: 3px solid #007bff; /* Blue outline for keyboard focus */
+  outline-offset: 2px;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+  header {
+    padding: 1rem;
+  }
+
+  header h2 {
+    font-size: 1.5rem; /* Smaller title on mobile */
+  }
+
+  .podcast-logo {
+    width: 24px; /* Smaller logo on mobile */
+    height: 24px;
+  }
+
+  .search {
+    height: 32px; /* Smaller button on mobile */
+    font-size: 0.9rem;
+  }
 }
 
 /* Podcast card */
