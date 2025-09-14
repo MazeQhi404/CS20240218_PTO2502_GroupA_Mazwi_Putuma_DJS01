@@ -31,6 +31,34 @@ class PodcastApp {
     });
    }
 
+   /**
+    * Renders podcast cards to the DOM
+    */
+
+   renderPodcasts() {
+    this.podcastList.innerHTML = ""; //Clears existing content
+    this.podcasts.forEach(podcast => {
+        const card = this.createPodcastCard(podcast);
+        this.podcastList.appendChild(card);
+    });
+   }
+
+   /**
+    * Creates a podcast card element
+    * @param {Object} podcast - Podcast data object.
+    * @returns {HTMLElement} - Podcast card element.
+    */
+   createPodcastCard(podcast) {
+    const card = document.createElement("article");
+    card.
+   }
+
+
+
+
+
+
+
 }
 
 // Initialize the app with data
