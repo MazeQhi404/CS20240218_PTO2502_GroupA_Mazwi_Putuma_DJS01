@@ -77,11 +77,38 @@ class PodcastApp {
     return card;
    }
 
-
-
-
-
-
+   /**
+    * Shows the modal with podcast details
+    * @param {Object} podcast - Podcast data object
+    */
+   showModal(podcast) {
+    const genreTitles = this.getGenreTitles(podcast.genres);
+    const seasonData = this.seasons.find(s => s.id === podcast.id)?.seasonDetails ||[]; // empty array provided as fallback if no match is found
+    this.modal.innerHTML = `
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close modal">x</button>
+      <img src="${podcast.image}" alt="${podcast.title} cover" class="modal-image">
+      <h2 class="modal-title">${podcast.title}</h2>
+      <p class="modal-description">${podcast.description}></p>
+      <p class="modal-genres">Genres: ${genreTitles.join(", ")}
+      <p class="modal-updated"> Last Updated: ${new Date(podcast.updated).toLocaleDateString("en-GB", {
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+      })}</p>
+      <div class="modal-seasons">
+         <h3>Seasons</h3>
+         <ul>
+           ${seasonData.map(season => `<li>${season.title}: ${season.episodes} episodes</li> `).join(" ")}
+         </ul>
+      </div>
+    </div>
+    `;
+    this.modal.style.display ="flex";
+    this.modal.setAttribute("aria-hidden", "false");
+    this.modal.querySelector(".modal-close").addEventListener("click", () => this.closeModal());
+    this.modal.querySelector(".modal-close").focus(); // Focus close button for accessibility
+   } 
 
 }
 
