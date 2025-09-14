@@ -119,6 +119,23 @@ class PodcastApp {
     this.modal.setAttribute("aria-hidden", "true")
    }
 
+   /** 
+    * Sets up event listeners for the modals
+    */
+
+   setupEventListeners() {
+    this.modal.addEventListener("click", (e) => {
+        if (e.target === this.modal) {
+            this.closeModal(); //Closes modal if clicking outside the content
+        }
+    });
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && this.modal.style.display === "flex") {
+            this.closeModal();
+        }
+    });
+   }   
+
 }
 
 // Initialize the app with data
