@@ -108,7 +108,16 @@ class PodcastApp {
     this.modal.setAttribute("aria-hidden", "false");
     this.modal.querySelector(".modal-close").addEventListener("click", () => this.closeModal());
     this.modal.querySelector(".modal-close").focus(); // Focus close button for accessibility
-   } 
+   }
+   
+   /**
+    * Closes the modal
+    */
+
+   closeModal() {
+    this.modal.style.display="none";
+    this.modal.setAttribute("aria-hidden", "true")
+   }
 
 }
 
