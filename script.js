@@ -18,9 +18,23 @@ class PodcastApp {
         this.renderPodcasts();
         this.setupEventListeners()
     }
-   
+
+    /**
+   * Maps genre IDs to genre titles.
+   * @param {number[]} genreIds - Array of genre IDs.
+   * @returns {string[]} - Array of genre titles.
+   */
+   getGenreTitles(genreIds) {
+    return genreIds.map(id => {
+        const genre = this.genres.find(g => g.id === id);
+        return genre ? genre.title : "Unknown";
+    });
+   }
+
 }
 
-
+// Initialize the app with data
+const app = new PodcastApp(podcasts, genres, seasons);
+   
 /* General Notes */ 
 
